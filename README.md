@@ -59,7 +59,7 @@ After the compilation:
 You can change the default or current locale any time you want and all expressions in templates will be updated.  
 The service based on [localizationjs](https://github.com/ortexx/localizationjs). 
 
-__.define()__ method take __localizationjs__ options, create an instance of the librarry class and put it on __locale__ property in the service object.
+__.define()__ method take __localizationjs__ options, create an instance of the library class and put it on __locale__ property in the service object.
 In addition, the service has all the same methods as __localizationjs__.
 
 ```javascript
