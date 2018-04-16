@@ -42,6 +42,18 @@ localization.define = function (options = {}) {
   Akili.options.globals.currency = this.currency.bind(this.locale);  
   Akili.options.globals.number = this.number.bind(this.locale);
   Akili.options.globals.date = this.date.bind(this.locale);
+
+  Object.defineProperty(localization, 'translateValueHandler', {
+    set: value => {
+      this.locale.translateValueHandler = value.bind(this.locale);
+    }
+  });
+
+  Object.defineProperty(localization, 'translateParamsHandler', {
+    set: value => {
+      this.locale.translateParamsHandler = value.bind(this.locale);
+    }
+  });
 }
 
 Akili.defaults(() => Akili.services.localization = localization);

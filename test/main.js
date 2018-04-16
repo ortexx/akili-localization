@@ -60,5 +60,22 @@ describe('Application initialization', () => {
       localization.setCurrentLocale('en');
       assert.equal(component.el.querySelector('a').innerHTML, en.hello);      
     });
+
+    it('should set the function to the instance', () => {
+      const fnValue = value => value || '*';
+      const fnParams = () => '*';
+      const currentValueFn = localization.locale.translateValueHandler;
+      const currentParamsFn = localization.locale.translateParamsHandler;
+      localization.translateValueHandler = fnValue;
+      localization.translateParamsHandler = fnParams;
+      assert.notStrictEqual(localization.locale.translateValueHandler, currentValueFn, 'check a value function');   
+      assert.notStrictEqual(localization.locale.translateParamsHandler, currentParamsFn, 'check params function'); 
+      assert.equal(localization.translate('nonExistent'), '*', 'check a value');  
+      assert.equal(localization.translate('withParams', [1]), 'with params *', 'check params');   
+    });    
+
+    it('should create akili service link', () => {
+      assert.strictEqual(Akili.services.localization, localization);      
+    });
   });
 });

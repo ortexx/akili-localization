@@ -23,7 +23,7 @@ const dictionaryRU = {
 
 localization.define({
   defaultLocale: "en",
-  currentLocale: "ru",
+  currentLocale: "ru"
 });
 
 localization.addDict("en-US", dictionaryEN);
