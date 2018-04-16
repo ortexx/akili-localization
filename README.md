@@ -13,7 +13,7 @@ const dictionaryEN = {
     en: "english",
     ru: "russian"
   },
-  how: "from %% to %%";
+  how: "from %% to %%",
   when "at {{ time }} o'clock"
 };
 
