@@ -1,0 +1,13 @@
+/node_modules
+/coverage
+
+*.vscode
+*.log
+*.bat
+*.git
+*.suo
+*.sln
+*.swp
+*.swo
+.vscode
+.idea
