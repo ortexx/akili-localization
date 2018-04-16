@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ```html
 <div>${ translate('hello') }</div>
+<div>${ translate('languages.en') }</div>
 <div>${ translate('how', [1, 10]) }</div>
 <div>${ translate('when', { time: 5 }) }</div>
 <div>${ date(new Date('1995-12-17T03:24:00')) }</div>
@@ -47,6 +48,7 @@ After the compilation:
 
 ```html
 <div>привет</div>
+<div>english</div>
 <div>from 1 to 10<div>
 <div>at 5 o'clock</div>
 <div>17.12.1995</div>
