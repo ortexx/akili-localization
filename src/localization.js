@@ -28,13 +28,13 @@ localization.define = function (options = {}) {
 
   this.setDefaultLocale = function () {
     const res = originalSetDefaultLocale.apply(this.locale, arguments);
-    Akili.__init && Akili.compile(Akili.root.el, { recompile: true });
+    Akili.__init && Akili.compile(Akili.root.el, { recompile: { checkChanges: true } });
     return res;
   }
 
   this.setCurrentLocale = function () {
     const res = originalSetCurrentLocale.apply(this.locale, arguments);
-    Akili.__init && Akili.compile(Akili.root.el, { recompile: true });
+    Akili.__init && Akili.compile(Akili.root.el, { recompile: { checkChanges: true } });
     return res;
   }
 

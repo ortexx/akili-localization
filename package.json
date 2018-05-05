@@ -1,6 +1,6 @@
 {
   "name": "akili-localization",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "Localiztion service for Akili framework",
   "main": "./src/localization.js",
   "author": {
