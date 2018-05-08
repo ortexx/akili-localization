@@ -1,7 +1,10 @@
 import Akili from 'akili';
+import globals from 'akili/src/globals';
 import Localization from 'localizationjs/src/localization';
 
-const localization = {};
+const localization = {
+  tags: ['globals.translate', 'globals.currency', 'globals.number', 'globals.date']
+};
 
 /**
  * Define the service
@@ -28,20 +31,15 @@ localization.define = function (options = {}) {
 
   this.setDefaultLocale = function () {
     const res = originalSetDefaultLocale.apply(this.locale, arguments);
-    Akili.__init && Akili.compile(Akili.root.el, { recompile: { checkChanges: true } });
+    Akili.evaluateTag(this.tags);
     return res;
   }
 
-  this.setCurrentLocale = function () {
+  this.setCurrentLocale = function () {    
     const res = originalSetCurrentLocale.apply(this.locale, arguments);
-    Akili.__init && Akili.compile(Akili.root.el, { recompile: { checkChanges: true } });
+    Akili.evaluateTag(this.tags);
     return res;
   }
-
-  Akili.options.globals.translate = this.translate.bind(this.locale);
-  Akili.options.globals.currency = this.currency.bind(this.locale);  
-  Akili.options.globals.number = this.number.bind(this.locale);
-  Akili.options.globals.date = this.date.bind(this.locale);
 
   Object.defineProperty(localization, 'translateValueHandler', {
     set: value => {
@@ -54,6 +52,11 @@ localization.define = function (options = {}) {
       this.locale.translateParamsHandler = value.bind(this.locale);
     }
   });
+
+  globals.translate = this.translate.bind(this.locale);
+  globals.currency = this.currency.bind(this.locale);
+  globals.number = this.number.bind(this.locale);
+  globals.date = this.date.bind(this.locale);
 }
 
 Akili.defaults(() => Akili.services.localization = localization);

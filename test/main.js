@@ -61,6 +61,16 @@ describe('Application initialization', () => {
       assert.equal(component.el.querySelector('a').innerHTML, en.hello);      
     });
 
+    it('should change the current locale', (done) => {
+      localization.setDefaultLocale('en');
+      localization.setCurrentLocale('ru');
+
+      setTimeout(() => {
+        assert.equal(component.el.querySelector('a').innerHTML, ru.hello); 
+        done();
+      });
+    });
+
     it('should set the function to the instance', () => {
       const fnValue = value => value || '*';
       const fnParams = () => '*';

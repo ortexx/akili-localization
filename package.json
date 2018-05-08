@@ -1,6 +1,6 @@
 {
   "name": "akili-localization",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "Localiztion service for Akili framework",
   "main": "./src/localization.js",
   "author": {
@@ -30,7 +30,7 @@
     "localization"
   ],
   "dependencies": {
-    "akili": "~0.6.8",
+    "akili": "~0.6.24",
     "localizationjs": "^2.0.0"
   },
   "devDependencies": {
