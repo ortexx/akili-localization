@@ -3,7 +3,7 @@ import globals from 'akili/src/globals';
 import Localization from 'localizationjs/src/localization';
 
 const localization = {
-  tags: ['globals.translate', 'globals.currency', 'globals.number', 'globals.date']
+  tags: ['translate', 'currency', 'number', 'date']
 };
 
 /**
@@ -31,13 +31,13 @@ localization.define = function (options = {}) {
 
   this.setDefaultLocale = function () {
     const res = originalSetDefaultLocale.apply(this.locale, arguments);
-    Akili.evaluateTag(this.tags);
+    this.tags.forEach(tag => Akili.triggerTag(tag));
     return res;
   }
 
   this.setCurrentLocale = function () {    
     const res = originalSetCurrentLocale.apply(this.locale, arguments);
-    Akili.evaluateTag(this.tags);
+    this.tags.forEach(tag => Akili.triggerTag(tag));
     return res;
   }
 
@@ -53,10 +53,7 @@ localization.define = function (options = {}) {
     }
   });
 
-  globals.translate = this.translate.bind(this.locale);
-  globals.currency = this.currency.bind(this.locale);
-  globals.number = this.number.bind(this.locale);
-  globals.date = this.date.bind(this.locale);
+  this.tags.forEach(tag =>  globals[tag] = this[tag].bind(this.locale));
 }
 
 Akili.defaults(() => Akili.services.localization = localization);
