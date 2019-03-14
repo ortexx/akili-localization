@@ -53,7 +53,7 @@ localization.define = function (options = {}) {
     }
   });
 
-  this.tags.forEach(tag =>  globals[tag] = this[tag].bind(this.locale));
+  this.tags.forEach(tag => globals[tag] = this[tag].bind(this.locale));
 }
 
 Akili.defaults(() => Akili.services.localization = localization);
