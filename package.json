@@ -1,6 +1,6 @@
 {
   "name": "akili-localization",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Localiztion service for Akili framework",
   "main": "./src/localization.js",
   "author": {
@@ -67,6 +67,6 @@
     "url": "https://github.com/ortexx/akili-localization"
   },
   "engines": {
-    "node": ">=5.0.0"
+    "node": ">=8.0.0"
   }
 }
