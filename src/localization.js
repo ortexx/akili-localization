@@ -1,5 +1,4 @@
 import Akili from 'akili';
-import globals from 'akili/src/globals';
 import Localization from 'localizationjs/src/localization';
 
 const localization = {
@@ -53,7 +52,7 @@ localization.define = function (options = {}) {
     }
   });
 
-  this.tags.forEach(tag => globals[tag] = this[tag].bind(this.locale));
+  this.tags.forEach(tag => Akili.globals[tag] = this[tag].bind(this.locale));
 }
 
 Akili.services.localization = localization;
