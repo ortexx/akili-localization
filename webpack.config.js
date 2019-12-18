@@ -5,13 +5,8 @@ const TerserPlugin = require('terser-webpack-plugin');
 const path = require('path');
 const pack = require('./package.json');
 
-let entry = {
-  'akili-localization': "./src/localization.js"
-};
-
 let plugins = [];
-let minimize = process.env.MINIMIZE;
-let build = process.env.BUILD;
+let isProd = process.env.NODE_ENV == 'production';
 
 let banner = `Localization service for Akili framework\n
 @version ${pack.version}
@@ -24,18 +19,16 @@ plugins.push(new webpack.BannerPlugin({
   banner: banner.trim()
 }));
 
-minimize && (entry['akili-localization.min'] = entry['akili-localization']);
-
 let config = {
-  mode: build? 'production': 'development',
+  mode: isProd? 'production': 'development',
   performance: { hints: false },
-  watch: !build,
+  watch: !isProd,
   bail: true,
-  devtool: "inline-source-map",
-  entry,
+  devtool: isProd? false: "inline-source-map",
+  entry: "./src/localization.js",
   output: {
     path: path.join(__dirname, "/dist"),
-    filename: "[name].js",
+    filename: "akili-localization.js",
     libraryExport: "default",
     libraryTarget: 'umd'
   },
@@ -45,7 +38,6 @@ let config = {
   optimization: {
     minimizer: [
       new TerserPlugin({
-        include: /\.min\.js$/,
         extractComments: false
       })
     ]
@@ -60,7 +52,7 @@ let config = {
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loader: 'babel-loader',        
         query: {
           presets: ['akili']
         }
