@@ -1,6 +1,6 @@
 {
   "name": "akili-localization",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Localiztion service for Akili framework",
   "main": "./src/localization.js",
   "author": {
@@ -11,7 +11,7 @@
   "scripts": {
     "start": "npm run build",
     "build": "webpack",
-    "build-prod": "NODE_ENV=production webpack",
+    "build-prod": "cross-env NODE_ENV=production webpack",
     "test": "karma start",
     "eslint": "eslint src test"
   },
@@ -36,8 +36,8 @@
     "localization"
   ],
   "dependencies": {
-    "akili": "^1.1.12",
-    "localizationjs": "^2.0.11"
+    "akili": "^1.1.16",
+    "localizationjs": "^2.0.12"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -45,6 +45,7 @@
     "babel-loader": "^7.1.5",
     "babel-preset-akili": "^1.0.0",
     "chai": "^4.2.0",
+    "cross-env": "^7.0.2",
     "eslint": "^5.16.0",
     "eslint-loader": "^3.0.3",
     "husky": "^4.2.5",
