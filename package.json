@@ -1,6 +1,6 @@
 {
   "name": "akili-localization",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Localiztion service for Akili framework",
   "main": "./src/localization.js",
   "author": {
@@ -36,7 +36,7 @@
     "localization"
   ],
   "dependencies": {
-    "akili": "^1.2.9",
+    "akili": "^1.2.10",
     "localizationjs": "^2.0.13"
   },
   "devDependencies": {
@@ -50,7 +50,7 @@
     "eslint-loader": "^3.0.3",
     "husky": "^4.3.6",
     "istanbul-instrumenter-loader": "^3.0.0",
-    "karma": "^5.2.3",
+    "karma": "^6.0.1",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-coverage-istanbul-reporter": "^2.1.1",
