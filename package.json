@@ -1,6 +1,6 @@
 {
   "name": "akili-localization",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Localiztion service for Akili framework",
   "main": "./src/localization.js",
   "author": {
@@ -36,14 +36,14 @@
     "localization"
   ],
   "dependencies": {
-    "akili": "^1.2.14",
-    "localizationjs": "^2.0.15"
+    "akili": "^1.2.17",
+    "localizationjs": "^2.0.16"
   },
   "devDependencies": {
     "@babel/core": "^7.13.15",
     "@babel/eslint-parser": "^7.13.14",
     "babel-loader": "^8.2.2",
-    "babel-preset-akili": "^2.0.4",
+    "babel-preset-akili": "^2.0.6",
     "chai": "^4.3.4",
     "cross-env": "^7.0.3",
     "eslint": "^7.23.0",
