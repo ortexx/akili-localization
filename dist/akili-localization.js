@@ -1,7 +1,7 @@
 /*!
  * Localization service for Akili framework
  *
- * @version 1.2.6
+ * @version 1.2.7
  * @author Alexandr Balasyan <mywebstreet@gmail.com>
  * {@link https://github.com/ortexx/akili-localization}
  * {@link https://github.com/ortexx/akili}
