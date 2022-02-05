@@ -1,6 +1,6 @@
 {
   "name": "akili-localization",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "Localiztion service for Akili framework",
   "main": "./src/localization.js",
   "author": {
@@ -36,8 +36,8 @@
     "localization"
   ],
   "dependencies": {
-    "akili": "^1.2.19",
-    "localizationjs": "^2.0.16"
+    "akili": "^1.2.20",
+    "localizationjs": "^2.0.19"
   },
   "devDependencies": {
     "@babel/core": "^7.13.15",
